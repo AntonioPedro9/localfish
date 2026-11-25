@@ -1,0 +1,1 @@
+export const LIVE_ANALYSIS_THROTTLE_MS = 100;

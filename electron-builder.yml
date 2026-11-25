@@ -1,0 +1,42 @@
+appId: com.localfish.app
+productName: Localfish
+artifactName: ${productName}-${version}-${os}-${arch}.${ext}
+
+directories:
+  output: dist
+
+files:
+  - out/**/*
+  - package.json
+
+linux:
+  target:
+    - AppImage
+  maintainer: Antônio Pedro <antoniopedro.rs9@gmail.com>
+  category: Game
+  extraResources:
+    - from: stockfish/stockfish-linux-x86-64-universal
+      to: stockfish/stockfish-linux-x86-64-universal
+
+win:
+  target:
+    - nsis
+    - portable
+  extraResources:
+    - from: stockfish/stockfish-windows-x86-64-universal
+      to: stockfish/stockfish-windows-x86-64-universal
+
+mac:
+  target:
+    - dmg
+    - zip
+  category: public.app-category.games
+  extraResources:
+    - from: stockfish/stockfish-macos-universal
+      to: stockfish/stockfish-macos-universal
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true

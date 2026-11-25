@@ -1,0 +1,50 @@
+{
+  "name": "localfish",
+  "version": "1.0.0",
+  "description": "Aplicação desktop para importação e revisão de partidas de xadrez com Stockfish local",
+  "author": "Antônio Pedro <antoniopedro.rs9@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/antoniopedro/localfish",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "node scripts/downloadStockfish.mjs --platform=current && electron-vite dev --watch",
+    "build": "electron-vite build",
+    "build:app": "node scripts/downloadStockfish.mjs --platform=current && electron-vite build && electron-builder",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "download:stockfish": "node scripts/downloadStockfish.mjs"
+  },
+  "dependencies": {
+    "@lichess-org/chessground": "^10.5.0",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-progress": "^1.1.2",
+    "@radix-ui/react-scroll-area": "^1.2.3",
+    "@radix-ui/react-slot": "^1.1.2",
+    "chess.js": "^1.0.0-beta.8",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.4",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "electron": "^34.2.0",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^3.0.0",
+    "postcss": "^8.5.3",
+    "prettier": "^3.9.10",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1",
+    "vitest": "^3.0.6"
+  }
+}
