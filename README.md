@@ -1,65 +1,52 @@
 # Localfish ♟️🐟
 
-Aplicação desktop desenvolvida com Electron para importação, visualização e revisão de partidas de xadrez com análise da engine **Stockfish** executada localmente.
+Desktop application built with Electron for importing, viewing, and reviewing chess games with local **Stockfish** engine analysis.
 
----
+![Game Review Summary](./docs/screenshots/review-summary.png)
 
-## 🏁 Como rodar o projeto
+![Move-by-Move Analysis](./docs/screenshots/move-analysis.png)
 
-### Pré-requisitos
+## Getting Started
 
-- [Node.js](https://nodejs.org/) (versão 20 ou superior recomendada)
-- Gerenciador de pacotes `npm` (ou `pnpm` / `yarn`)
+### Prerequisites
 
-### Passo a Passo
+- [Node.js](https://nodejs.org/) (version 20 or higher recommended)
+- `npm` package manager (or `pnpm` / `yarn`)
 
-1. **Clonar o repositório:**
+### Step by Step
+
+1. **Clone the repository:**
 
    ```bash
    git clone https://github.com/antoniopedro/localfish.git
    cd localfish
    ```
 
-2. **Instalar as dependências:**
+2. **Install dependencies:**
 
    ```bash
    npm install
    ```
 
-3. **Iniciar em modo de desenvolvimento:**
+3. **Start in development mode:**
 
    ```bash
    npm run dev
    ```
 
----
+> [!NOTE]
+> Running `npm run dev` automatically downloads the Stockfish binary if it has not been downloaded yet.
 
-## 📜 Principais Comandos
+## Core Libraries and Licenses
 
-| Comando                      | Descrição                                                                                                                                                          |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `npm run dev`                | Baixa o binário do Stockfish (caso ainda não esteja presente) e inicia a aplicação em modo de desenvolvimento com hot-reload.                                      |
-| `npm run build`              | Compila o código TypeScript dos processos main, preload e renderer usando Vite.                                                                                    |
-| `npm run build:app`          | Prepara o executável e empacota o instalador de produção na pasta `dist/` usando o Electron Builder.                                                               |
-| `npm run download:stockfish` | Script utilitário para baixar manualmente as releases oficiais do Stockfish via GitHub. Aceita parâmetros como `--platform=current`, `--platform=all` e `--force`. |
-| `npm run test`               | Executa a suíte de testes unitários com o [Vitest](https://vitest.dev/).                                                                                           |
-| `npm run typecheck`          | Executa a verificação estática de tipos TypeScript (`tsc --noEmit`) sem gerar arquivos de saída.                                                                   |
-| `npm run format`             | Formata todos os arquivos do projeto de acordo com o padrão configurado no Prettier.                                                                               |
+This project integrates foundational libraries from the open-source chess ecosystem:
 
----
+| Library                                                          | Role in the Project                                                                                                                   | Official License                                                                           |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **[Stockfish](https://github.com/official-stockfish/Stockfish)** | Chess engine executed locally in a separate process for positional evaluation and calculation of the best tactical lines.             | [GPL-3.0 License](https://github.com/official-stockfish/Stockfish/blob/master/Copying.txt) |
+| **[Chessground](https://github.com/lichess-org/chessground)**    | Interactive chessboard library developed by Lichess, responsible for the visual interface, smooth animations, and piece movement.     | [GPL-3.0-or-later License](https://github.com/lichess-org/chessground/blob/master/LICENSE) |
+| **[chess.js](https://github.com/jhlywa/chess.js)**               | JavaScript library for chess rule validation, legal move generation, check/checkmate/draw detection, and FEN/PGN format manipulation. | [BSD-2-Clause License](https://github.com/jhlywa/chess.js/blob/master/LICENSE)             |
 
-## 📦 Bibliotecas Principais e Licenças
+## License
 
-Este projeto integra bibliotecas fundamentais do ecossistema de xadrez de código aberto:
-
-| Biblioteca                                                       | Papel no Projeto                                                                                                                                          | Licença Oficial                                                                            |
-| ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **[Stockfish](https://github.com/official-stockfish/Stockfish)** | Motor de xadrez executado localmente em processo separado para avaliação posicional e cálculo das melhores linhas táticas.                                | [GPL-3.0 License](https://github.com/official-stockfish/Stockfish/blob/master/Copying.txt) |
-| **[Chessground](https://github.com/lichess-org/chessground)**    | Biblioteca de tabuleiro de xadrez interativo desenvolvida pelo Lichess, responsável pela interface visual, animação fluida e movimentação das peças.      | [GPL-3.0-or-later License](https://github.com/lichess-org/chessground/blob/master/LICENSE) |
-| **[chess.js](https://github.com/jhlywa/chess.js)**               | Biblioteca JavaScript para validação de regras do xadrez, geração de lances válidos, verificação de xeque/mate/empates e manipulação de formatos FEN/PGN. | [BSD-2-Clause License](https://github.com/jhlywa/chess.js/blob/master/LICENSE)             |
-
----
-
-## 📄 Licença
-
-Este software é distribuído sob a licença **MIT**. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
+This software is distributed under the **MIT** license. See the [LICENSE](./LICENSE) file for more details.
